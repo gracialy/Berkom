@@ -362,10 +362,10 @@ function resetGame() {
 }
 
 // Event listeners
-document.querySelector('.up').addEventListener('click', () => addCommand('up', '../assets/img/circle-up-solid.svg'));
-document.querySelector('.down').addEventListener('click', () => addCommand('down', '../assets/img/circle-down-solid.svg'));
-document.querySelector('.left').addEventListener('click', () => addCommand('left', '../assets/img/circle-left-solid.svg'));
-document.querySelector('.right').addEventListener('click', () => addCommand('right', '../assets/img/circle-right-solid.svg'));
+document.querySelector('.up').addEventListener('click', () => addCommand('up', 'img/circle-up-solid.svg'));
+document.querySelector('.down').addEventListener('click', () => addCommand('down', 'img/circle-down-solid.svg'));
+document.querySelector('.left').addEventListener('click', () => addCommand('left', 'img/circle-left-solid.svg'));
+document.querySelector('.right').addEventListener('click', () => addCommand('right', 'img/circle-right-solid.svg'));
 document.querySelector('.run').addEventListener('click', executeCommands);
 document.querySelector('.delete').addEventListener('click', () => {
     if (!isExecuting) {
@@ -375,8 +375,8 @@ document.querySelector('.delete').addEventListener('click', () => {
         }
     }
 });
-document.querySelector('.loop').addEventListener('click', () => addCommand('loop', '../assets/img/road-barrier-solid.svg'));
-document.querySelector('.conditional').addEventListener('click', () => addCommand('conditional', '../assets/img/traffic-light-solid.svg'));
+document.querySelector('.loop').addEventListener('click', () => addCommand('loop', 'img/road-barrier-solid.svg'));
+document.querySelector('.conditional').addEventListener('click', () => addCommand('conditional', 'img/traffic-light-solid.svg'));
 
 // Initialize and start game
 initGame();
