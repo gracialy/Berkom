@@ -27,7 +27,6 @@ const ctx = canvas.getContext('2d');
 const commandContainer = document.getElementById('commandContainer');
 const scoreElement = document.getElementById('score');
 const iterationElement = document.getElementById('iteration');
-const liveElement = document.getElementById('live');
 
 
 // Constants
@@ -40,7 +39,6 @@ const PACMAN_Y = 1;
 const REWARD = 10;
 const PENALTY = -10;
 const MAX_ITERATION = 20;
-const MAX_LIVES = 3;
 
 // Set canvas size
 canvas.width = GRID_SIZE * COLS;
@@ -56,7 +54,6 @@ let pacman = {
 
 let score = 0;
 let iteration = 0;
-let lives = MAX_LIVES;
 let dots = [];
 let walls = [];
 let commands = [];
@@ -188,11 +185,6 @@ function updateIteration() {
     iterationElement.textContent = iteration;
 }
 
-function updateLive() {
-    lives--;
-    liveElement.textContent = lives;
-}
-
 // Movement and game logic
 function canMove(x, y) {
     return !walls.some(wall => wall.x === x && wall.y === y);
@@ -206,7 +198,6 @@ function checkDotCollision() {
     if (dotIndex !== -1) {
         dots.splice(dotIndex, 1);
         updateScore(REWARD);
-        updateLive();
         
         if (dots.length === 0) {
             alert('You win! Game will restart.');
