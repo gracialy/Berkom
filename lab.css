@@ -1,0 +1,225 @@
+.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        background-color: var(--cream-color);
+}
+
+/* tutorial */
+.tutorial {
+        width: 100%;
+        max-width: 600px;
+        padding-top: 120px;
+}
+
+.tutorial-page {
+        padding-bottom: 10px;
+
+}
+
+.next,
+.back 
+{
+        display: inline-block;
+        gap: 10px;
+        padding: 10px 20px;
+        border: 2px solid transparent;
+        color: white;
+        border-radius: var(--border-radius-2);
+        font-size: var(--font-size-4);
+        background: var(--secondary-color);
+        border: var(--secondary-color);
+        transition: 0.3s ease;
+        margin: 10px 30px;
+}
+
+.next:hover,
+.back:hover 
+{
+        background: transparent;
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+}
+
+#page1 .next {
+        background-color: var(--primary-color);
+        border: var(--primary-color);
+}
+
+#page1 .next:hover {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+}
+
+.tutorial-page .game-title {
+        color: var(--primary-color);
+        font-size: var(--font-size-1);
+}
+
+.tutorial-page .tutorial-title {
+        color: var(--primary-color);
+        font-size: var(--font-size-2);
+}
+
+.tutorial-page .tutorial-description {
+        padding-bottom: 10px;
+        font-size: var(--font-size-3);
+}
+
+.score, .iteration, .live {
+        font-size: var(--font-size-3);
+        font-weight: var(--font-weight-2);
+        color: var(--primary-color);
+}
+
+.game {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        justify-content: center;
+        flex-direction: row;
+        gap: 20px;
+        min-width: 100%;
+}
+
+.left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+}
+
+.command-container {
+        min-height: 170px;
+        border: 2px solid var(--air-superiority-color);
+        background-color: var(--air-superiority-color);
+        border-radius: 5px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 5px;
+        align-content: center;
+}
+
+.command {
+        min-width: 70px;
+        min-height: 70px;
+        border: 1px solid var(--ash-gray-color);
+        background-color: var(--ash-gray-color);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+}
+
+.command img {
+        width: 30px;
+        height: auto;
+}
+
+.grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        min-width: 400px;
+}
+
+.grid-item {
+        min-width: 70px;
+        min-height: 70px;
+        aspect-ratio: 1;
+        border: 1px solid #4A90E2;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: var(--ash-gray-color);
+        border: var(--ash-gray-color);
+        transition: background-color 0.3s;
+}
+
+.grid-item:hover {
+        background-color: var(--air-superiority-color);
+        border: var(--air-superiority-color);
+}
+
+.grid-item img {
+        width: 40px;
+}
+
+.canvas-container {
+        flex-grow: 1;
+}
+
+canvas {
+        background: black;
+        max-width: 100%;
+        height: auto;
+}
+
+/* drag and drop */
+.command.dragging {
+        opacity: 0.5;
+        position: absolute;
+        pointer-events: none;
+        z-index: 1000;
+}
+
+.command.drag-over {
+        transform: translateX(60px);
+}
+
+.placeholder {
+        width: 50px;
+        height: 50px;
+        border: 2px dashed rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+}
+    
+/* responsive media */
+@media screen and (max-width: 900px) {
+        .container {
+                min-height: 100vh;
+                overflow-y: auto;
+        }
+
+        .tutorial {
+                padding: 120px 20px 10px;
+                height: auto;
+        }
+
+        .game {
+                padding: 0px 20px;
+                display: block;
+                flex-direction: row;
+                overflow-x: auto;
+        }
+
+        .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas:
+                        "delete . run"
+                        "loop up conditional"
+                        "left down right";
+                max-width: 300px; 
+        }
+
+        .grid-container img {
+                height: 30px;
+                width: 30px;
+        }
+
+        /* footer */
+        .footer-content {
+                display: none;
+        }
+}

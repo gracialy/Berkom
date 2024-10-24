@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTLab</title>
+    <link rel="icon" href="img/robot-solid.svg" sizes="any" type="image/svg+xml">
+    <!-- css -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="container">
+            <!-- tutorial section -->
+            <section class="tutorial">
+                <div class="tutorial-page" id="page1">
+                        <h2 class="game-title">CThink</h2>
+                        <p class="tutorial-description">Learn loop and conditionals!</p>
+                        <button class="next" onclick="nextPage(2)">Tutorial</i>
+                </div>
+                <div class="tutorial-page" id="page2" style="display: none;">
+                        <h2 class="tutorial-title">How to Play</h2>
+                        <p class="tutorial-description">Develop strategies to move the pacs and get all pellets in 20 runs.
+                                Bumping into walls will deduct your score and lives.
+                        </p>
+                        </p>
+                        <button class="back" onclick="prevPage(1)">< Back</button>
+                        <button class="next" onclick="nextPage(3)">Next ></button>
+                </div>
+                <div class="tutorial-page" id="page3" style="display: none;">
+                        <h2 class="tutorial-title">How to Play</h2>
+                        <p class="tutorial-description">To make the pac move, the player needs to add movement commands
+                                to the solution bar. Up to 10 commands can be added per run.
+                        </p>
+                        <button class="back" onclick="prevPage(2)">< Back</button>
+                        <button class="next" onclick="nextPage(4)">Next ></button>
+                </div>
+                <div class="tutorial-page" id="page4" style="display: none;">
+                        <h2 class="tutorial-title">How to Play</h2>
+                        <p class="tutorial-description">
+                                After adding the commands, press the run button. This will
+                                make the pac move according to your strategy.
+                        </p>
+                        <button class="back" onclick="prevPage(3)">< Back</button>
+                        <button class="next" onclick="nextPage(5)">Next ></button>
+                </div>
+                <div class="tutorial-page" id="page5" style="display: none;">
+                        <h2 class="tutorial-title">How to Play</h2>
+                        <p class="tutorial-description">The arrow buttons are pretty straightforward.
+                                <br><br>Meanwhile, the delete button serves for deleting the last command you input. 
+                        </p>
+                        <button class="back" onclick="prevPage(4)">< Back</button>
+                        <button class="next" onclick="nextPage(6)">Next ></button>
+                </div>
+                <div class="tutorial-page" id="page6" style="display: none;">
+                        <h2 class="tutorial-title">How to Play</h2>
+                        <p class="tutorial-description">The halt road barrier button and the traffic light button 
+                                must be followed with at least an arrow button. <br><br> The halt button will move according
+                                to the arrow button until the pac reaches a wall. Meanwhile, the traffic button will move until
+                                the next intersection.
+                        </p>
+                        <button class="back" onclick="prevPage(5)">< Back</button>
+                        <button class="next" onclick="nextPage(7)">Next ></button>
+                </div>
+                <div class="tutorial-page" id="page7" style="display: none;">
+                        <h2 class="tutorial-title">How to Play</h2>
+                        <p class="tutorial-description">Good luck!
+                        </p>
+                        <button class="back" onclick="prevPage(6)">< Back</button>
+                </div>
+            </section>
+
+            <!-- game section -->
+            <section id="game-section" class="gameSection" >
+                <section id="game" class="game">
+                    <div class="canvas-container">
+                        <canvas id="gameCanvas"></canvas>
+                    </div>
+                    <div class="left-column">
+                        <div class="score">Score: <span id="score">0</span></div>
+                        <div class="iteration">Iterations: <span id="iteration">0</span></div>
+                        <div class="live">Lives: <span id="live">3</span></div>
+                        <div class="command-container" id="commandContainer"></div>
+                        <div class="grid-container">
+                            <!-- row 1 -->
+                            <button class="control-btn grid-item run"><img src="img/play-solid.svg"></button>
+                            <button class="control-btn grid-item conditional"><img src="img/traffic-light-solid.svg"></button>
+                            <button class="control-btn grid-item up"><img src="img/circle-up-solid.svg"></button>
+                            <button class="control-btn grid-item loop"><img src="img/road-barrier-solid.svg"></button>
+                            <!-- row 2 -->
+                            <button class="control-btn grid-item delete"><img src="img/delete-left-solid.svg"></button>
+                            <button class="control-btn grid-item left"><img src="img/circle-left-solid.svg"></button>
+                            <button class="control-btn grid-item down"><img src="img/circle-down-solid.svg"></button>
+                            <button class="control-btn grid-item right"><img src="img/circle-right-solid.svg"></button>
+                        </div>
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="main.js"></script>
+    <script src="lab.js"></script>
+</body>
+</html>

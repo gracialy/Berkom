@@ -1,0 +1,112 @@
+.section-content {
+        max-width: var(--site-max-width);
+        margin: 0 auto;
+        padding: 0 20px;
+}
+
+/* hero section */
+.hero-section {
+        background: var(--primary-color);
+}
+
+.hero-section .section-content {
+        padding-top: 80px;
+        padding-bottom: 20px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--cream-color);
+        min-height: 94vh;
+}
+
+.hero-section .hero-details .title {
+        max-width: 500px;
+        font-size: var(--font-size-1);
+        color: var(--secondary-color);
+}
+
+.hero-section .hero-details .subtitle {
+        margin-top: 20px;
+        max-width: 70%;
+        font-size: var(--font-size-3);
+        margin: 20px 0;
+}
+
+.hero-section .hero-details .description {
+        max-width: 70%;
+        font-size: var(--font-size-4);
+        margin: 20px 0 24px;
+}
+
+.hero-section .hero-details .button {
+        display: inline-block;
+        gap: 10px;
+        padding: 10px 20px;
+        border: 2px solid transparent;
+        color: var(--ash-gray-color);
+        border-radius: var(--border-radius-2);
+        background: var(--secondary-color);
+        transition: 0.3s ease;
+}
+
+.hero-section .hero-details .button:hover,
+.hero-section .hero-details .get-started {
+        background: transparent;
+        color: var(--cream-color);
+        border: 2px solid var(--secondary-color);
+}
+
+.hero-section .hero-details .get-started:hover {
+        background: var(--secondary-color);
+        color: var(--cream-color);
+}
+
+.hero-section .hero-image-wrapper {
+        max-width: 500px;
+        margin-right: 20px;
+}
+
+/* footer */
+.footer-content{
+        background-color: var(--primary-color);
+}
+
+.footer-logo h2 {
+        color: var(--ash-gray-color);
+}
+    
+.footer-contact {
+        justify-content: flex-end;
+        display: flex;
+        gap: 20px; 
+}
+
+/* responsive media hero page */
+@media screen and (max-width: 900px) {
+        .hero-section .section-content {
+                gap: 50px;
+                text-align: center;
+                flex-direction: column;
+                padding: 30px 20px 20px;
+                justify-content: center;
+                min-height: 100vh;
+        }
+
+        .hero-section .hero-details .title {
+                padding-top: 50px;
+                max-width: 100%;
+        }
+
+        .hero-section .hero-details :is(.subtitle, .description) {
+                max-width: 100%;
+        }
+
+        .hero-section .hero-details .button {
+                justify-content: center;
+        }
+
+        .hero-section .hero-image-wrapper {
+                max-width: 300px;
+        }
+}

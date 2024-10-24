@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+}
+
+:root {
+        /* color */
+        --primary-color: #29339b;
+        --secondary-color: #ff3a20;
+        --air-superiority-color: #74a4bc;
+        --ash-gray-color: #b6d6cc;
+        --cream-color: #f1fec6;
+
+        /* font-size */
+        --font-size-1: 5rem;
+        --font-size-2: 2.5rem;
+        --font-size-3: 1.5rem;
+        --font-size-4: 1.12rem;
+        --font-size-5: 1rem;
+        --font-size-6: 0.9rem;
+
+        /* font-weight */
+        --font-weight-1: 700;
+        --font-weight-2: 600;
+        --font-weight-3: 500;
+        --font-weight-4: 400;
+
+        /* border-radius */
+        --border-radius-1: 50px;
+        --border-radius-2: 30px;
+        --border-radius-3: 8px;
+
+        /* site-max-width */
+        --site-max-width: 1200px;
+}
+
+/* global styles */
+ul {
+        list-style: none;
+}
+
+a {
+        text-decoration: none;
+}
+
+button {
+        cursor: pointer;
+        border: none;
+        background: none;
+}
+
+img {
+        max-width: 100%;
+}
+
+/* header */
+header {
+        position: fixed;
+        width: 100%;
+        z-index: 5;
+        background: var(--primary-color); 
+}
+
+header .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+}
+
+.navbar .nav-logo .logo-text {
+        color: var(--cream-color);
+        font-size: var(--font-size-2);
+        font-weight: var(--font-weight-1);
+}
+
+.navbar .nav-menu {
+        display: flex;
+        gap: 10px;
+}
+
+.navbar .nav-menu .nav-link {
+        color: var(--cream-color);
+        font-size: var(--font-size-3);
+        font-weight: var(--font-weight-2);
+        padding: 30px 10px 20px;
+        border-radius: var(--border-radius-2);
+        transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover {
+        background: var(--secondary-color);
+        color: var(--cream-color);
+        padding-top: 15px;
+        padding-bottom: 15px;
+}
+
+.navbar :where(#menu-close, #menu-open) {
+        display: none;
+}
+
+/* footer */
+.footer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px; 
+        padding: 20px;
+        background-color: var(--secondary-color);
+        color: var(--cream-color);
+        font-size: 18px;
+        height: 6vh;
+}
+    
+.footer-logo h2 {
+        margin: 0;
+        font-size: 24px;
+}
+    
+.footer-contact {
+        justify-content: flex-end;
+        display: flex;
+        gap: 20px; 
+}
+    
+.footer-contact p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+}
+    
+.footer-contact i {
+        margin-right: 5px;
+}    
+
+/* responsive media */
+@media screen and (max-width: 900px) {
+        :root {
+                /* font-size */
+                --font-size-1: 2.5rem;
+                --font-size-2: 1.8rem;
+                --font-size-3: 1.5rem;
+                --font-size-4: 1.3rem;
+        }
+
+        /* header */
+        body.show-mobile-menu header::before {
+                content: "";
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+                backdrop-filter: blur(5px);
+                z-index: 2;
+                background: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar :where(#menu-close, #menu-open) {
+                font-size: var(--font-size-2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+
+        .navbar #menu-close img {
+                width: 30px;  
+                height: 30px;
+                position: absolute;
+                right: 30px;
+                top: 30px;
+                filter: invert(34%) sepia(86%) saturate(4333%) hue-rotate(349deg) brightness(105%) contrast(101%);
+        }
+
+        .navbar #menu-open {
+                position: relative;
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 16px;  
+        }
+            
+        .navbar #menu-open img {
+                width: 25px;  /* Adjust to match your previous icon size */
+                height: 25px;
+                display: block;  /* Important to make image visible */
+                filter: invert(34%) sepia(86%) saturate(4333%) hue-rotate(349deg) brightness(105%) contrast(101%);
+        }
+
+        .navbar .nav-menu {
+                overflow-y: auto;
+                display: block;
+                background: var(--cream-color);
+                position: fixed;
+                left: -300px;
+                top: 0;
+                width: 300px;
+                height: 100%;
+                padding-top: 100px;
+                flex-direction: column;
+                align-items: center;
+                z-index: 2;
+                transition: left 0.3s ease;
+        }
+
+        body.show-mobile-menu .navbar .nav-menu {
+                left: 0;
+        }
+
+        .navbar .nav-menu .nav-link {
+                display: block;
+                margin-top: 17px;
+                padding: 10px 20px;
+                color: var(--primary-color);
+                font-size: var(--font-size-3);
+                border-radius: 0;
+        }
+
+        /* footer */
+        .footer-content {
+                background-color: var(--cream-color);
+                display: flex;
+                font-size: var(--font-size-5);
+                min-height: 150px;
+                color: var(--ash-gray-color);
+                /* flex-direction: column;
+                align-items: center;  */
+        }
+
+        .footer-contact {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+        }
+
+        .footer-content a {
+                margin-bottom: 10px;
+        }
+}
